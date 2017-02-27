@@ -1,0 +1,35 @@
+How to verify
+
+1. Trun on wifi
+2. Launch w3c-push-dem app
+3. RSK to register
+4. Check log whether includes push subscription (the following is an example)
+
+subscription: {"endpoint":"https://updates.rjio.kaiostech.com:8443/wpush/v1/gAAAAABYsAAZh7A0u3POOb9J_WiQE6m-yoJkXibjbvroRdnkW4lXhjR-Htr2mv3m0GLbBhwPOFkYW0LIlugzvlyw5j_uRwGJnx004zwgND5TSuRtLrCIn_NOmTACErKYCHSZyZ2UBUUv","keys":{"auth":"gdbFP0ODvj0U0DIe3Iiutw","p256dh":"BGxusm2FaOnZbSyxu3WkHd2cBc5zVRrQ-pA44Bkc4qeWJm3J51VK0e9xKPF9mQCzieIQCoy5S--zurjqdeCToVw"}} 
+
+
+
+// Full log
+
+02-24 09:42:35.592  7658  7658 I Web Push Demo: Content JS LOG: Service worker installing 
+02-24 09:42:35.592  7658  7658 I Web Push Demo:     at <anonymous> (app://w3c-push-demo.gaiamobile.org/push.js:21:9)
+02-24 09:42:35.632  7658  7658 D Web Push Demo: Content JS DEBUG: Push() 
+02-24 09:42:35.632  7658  7658 D Web Push Demo:     at Push (jar:file:///system/b2g/omni.ja!/components/Push.js:35:undefined)
+02-24 09:42:35.642  7658  7658 D Web Push Demo: Content JS DEBUG: init() 
+02-24 09:42:35.642  7658  7658 D Web Push Demo:     at Push.prototype.init (jar:file:///system/b2g/omni.ja!/components/Push.js:50:undefined)
+02-24 09:42:35.642  7658  7658 D Web Push Demo: Content JS DEBUG: getSubscription() app://w3c-push-demo.gaiamobile.org/ 
+02-24 09:42:35.642  7658  7658 D Web Push Demo:     at Push.prototype.getSubscription (jar:file:///system/b2g/omni.ja!/components/Push.js:121:undefined)
+02-24 09:42:35.672  7658  7658 I Web Push Demo: Content JS LOG: The service worker has activated and taken control. 
+02-24 09:42:35.672  7658  7658 I Web Push Demo:     at <anonymous> (app://w3c-push-demo.gaiamobile.org/push.js:29:8)
+02-24 09:42:35.722  7658  7658 I Web Push Demo: Content JS LOG: Not yet subscribed to Push 
+02-24 09:42:35.722  7658  7658 I Web Push Demo:     at initialiseState/</< (app://w3c-push-demo.gaiamobile.org/push.js:66:11)
+
+
+// perfrom RSK
+
+02-24 09:42:46.932  7658  7658 D Web Push Demo: Content JS DEBUG: subscribe() app://w3c-push-demo.gaiamobile.org/ 
+02-24 09:42:46.932  7658  7658 D Web Push Demo:     at Push.prototype.subscribe (jar:file:///system/b2g/omni.ja!/components/Push.js:93:undefined)
+02-24 09:42:46.942  7658  7658 D Web Push Demo: Content JS DEBUG: askPermission() 
+02-24 09:42:46.942  7658  7658 D Web Push Demo:     at Push.prototype.askPermission (jar:file:///system/b2g/omni.ja!/components/Push.js:64:undefined)
+02-24 09:42:50.342  7658  7658 D Web Push Demo: Content JS DEBUG: subscription: {"endpoint":"https://updates.rjio.kaiostech.com:8443/wpush/v1/gAAAAABYsAAZh7A0u3POOb9J_WiQE6m-yoJkXibjbvroRdnkW4lXhjR-Htr2mv3m0GLbBhwPOFkYW0LIlugzvlyw5j_uRwGJnx004zwgND5TSuRtLrCIn_NOmTACErKYCHSZyZ2UBUUv","keys":{"auth":"gdbFP0ODvj0U0DIe3Iiutw","p256dh":"BGxusm2FaOnZbSyxu3WkHd2cBc5zVRrQ-pA44Bkc4qeWJm3J51VK0e9xKPF9mQCzieIQCoy5S--zurjqdeCToVw"}} 
+02-24 09:42:50.342  7658  7658 D Web Push Demo:     at register/< (app://w3c-push-demo.gaiamobile.org/push.js:52:9)
