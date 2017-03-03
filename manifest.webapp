@@ -11,5 +11,8 @@
   "permissions": {
     "push": {"description": "To receive notifications"},
     "desktop-notification": {}
-  }
+  },
+  "messages": [
+    {"serviceworker-notification": "/index.html"}
+  ]
 }

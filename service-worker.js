@@ -24,8 +24,10 @@ self.addEventListener('push', function(event) {
 
   var title = 'Yay a message.';
   var body;
-  if (event.data) {
+  var data = {};
+  if (event.data != undefined) {
     body = event.data.text();
+    data.msg = body;
   } else {
     body = 'We have received a push notification.';
   }
@@ -42,7 +44,7 @@ self.addEventListener('push', function(event) {
     self.registration.showNotification(title, {
       body: body,
       icon: icon,
-      data: body,
+      data: data,
       tag: tag
     })
   }));
@@ -51,4 +53,12 @@ self.addEventListener('push', function(event) {
 self.addEventListener('notificationclick', function(event) {
   event.notification.close();
   console.log("Notification Click");
+  if (event.notification.data.msg != undefined) {
+    var openAppEvent = {
+      msg: event.notification.data.msg
+    }
+    clients.openApp(openAppEvent);
+  } else {
+    clients.openApp();
+  }
 });

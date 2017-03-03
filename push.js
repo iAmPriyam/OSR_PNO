@@ -7,6 +7,10 @@ var _applicationKeys = {
         'iZoUhDqh5xHLHlO5zTWUOk64UMHFUmLrFQxiTNNNqRo'),
 };
 
+navigator.mozSetMessageHandler('serviceworker-notification', function(m) {
+  console.log('Push notification = ' + m.msg);
+});
+
 window.addEventListener('load', function() {
   
   registerBtn.addEventListener('click', function() {
