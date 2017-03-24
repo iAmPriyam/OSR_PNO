@@ -9,7 +9,7 @@
     "name": "KaiOS Apps"
   },
   "permissions": {
-    "push": {"description": "To receive notifications"},
+    "serviceworker": {},
     "desktop-notification": {}
   },
   "messages": [
