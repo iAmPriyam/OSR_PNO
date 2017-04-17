@@ -1,6 +1,6 @@
 'use strict';
 
-var port;
+self.importScripts('helpers.js');
 
 self.addEventListener('activate', function(event) {
 
@@ -11,7 +11,7 @@ self.addEventListener('activate', function(event) {
       // This will trigger navigator.serviceWorker.onmessage in each client.
       return self.clients.matchAll().then(function(clients) {
         return Promise.all(clients.map(function(client) {
-          return client.postMessage('The service worker has activated and ' + 
+          return client.postMessage('The service worker has activated and ' +
             'taken control.');
         }));
       });
@@ -48,6 +48,22 @@ self.addEventListener('push', function(event) {
       tag: tag
     })
   }));
+});
+
+self.addEventListener('pushsubscriptionchange', e => {
+  console.log('Subscription expired');
+  var _applicationKeys = {
+    publicKey: base64UrlToUint8Array(
+      'BIuoU7oJ1yjSv9081Kw2tpN10y6Zi3U7OQnHrbssrkVP8z1igHjKFfwQFNl1MnLBXvwyNMNulq-_nBdXzujrxUc'),
+  };
+  e.waitUntil(registration.pushManager.subscribe({
+      userVisibleOnly: true,
+      applicationServerKey: _applicationKeys.publicKey,
+    })
+    .then(subscription => {
+      // TODO: Send new subscription to application server
+      console.log("subscription: " + JSON.stringify(subscription.toJSON()));
+    }));
 });
 
 self.addEventListener('notificationclick', function(event) {

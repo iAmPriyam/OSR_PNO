@@ -4,7 +4,7 @@ function uint8ArrayToBase64Url(uint8Array, start, end) {
   start = start || 0;
   end = end || uint8Array.byteLength;
 
-  const base64 = window.btoa(
+  const base64 = self.btoa(
     String.fromCharCode.apply(null, uint8Array.subarray(start, end)));
   return base64
     .replace(/\=/g, '') // eslint-disable-line no-useless-escape
@@ -19,7 +19,7 @@ function base64UrlToUint8Array(base64UrlData) {
     .replace(/\-/g, '+')
     .replace(/_/g, '/');
 
-  const rawData = window.atob(base64);
+  const rawData = self.atob(base64);
   const buffer = new Uint8Array(rawData.length);
 
   for (let i = 0; i < rawData.length; ++i) {
@@ -28,12 +28,7 @@ function base64UrlToUint8Array(base64UrlData) {
   return buffer;
 }
 
-if (window) {
+if (typeof window !== 'undefined' && window) {
   window.uint8ArrayToBase64Url = uint8ArrayToBase64Url;
   window.base64UrlToUint8Array = base64UrlToUint8Array;
-} else if (module && module.exports) {
-  module.exports = {
-    uint8ArrayToBase64Url: uint8ArrayToBase64Url,
-    base64UrlToUint8Array: base64UrlToUint8Array,
-  };
 }
