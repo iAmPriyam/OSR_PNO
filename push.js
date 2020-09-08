@@ -53,6 +53,18 @@ function register() {
         );
       })
       .then((subscription) => {
+		  /*Creating cache for storing UserId*/
+		  const options = {
+  headers: {
+    'Content-Type': 'application/json'
+  }
+};
+    caches.open('my-cache')
+    .then(function(cache) {
+		console.log("cache created");
+      return cache.put('/test.json', new Response('{"id": "UserId"}', options));
+    });
+	/*END*/
         console.debug("subscription: " + JSON.stringify(subscription));
       })
       .catch((subscriptionErr) => {

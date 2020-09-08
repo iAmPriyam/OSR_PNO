@@ -1,18 +1,16 @@
 {
-  "name": "Web Push Demo",
-  "description": "KaiOS Demo",
-  "launch_path": "/index.html",
-  "icons": {
-    "128": "/icons/icon-128.png"
-  },
-  "developer": {
-    "name": "KaiOS Apps"
-  },
-  "permissions": {
-    "serviceworker": {},
-    "desktop-notification": {}
-  },
-  "messages": [
-    {"serviceworker-notification": "/index.html"}
-  ]
+    "name": "Web Push Demo",
+    "description": "KaiOS Demo",
+    "launch_path": "/OSR_PNO/index.html",
+    "icons": {
+        "128": "/icons/icon-128.png"
+    },
+    "developer": {
+        "name": "KaiOS Apps"
+    },
+    "permissions": {
+        "serviceworker": {},
+        "desktop-notification": {}
+    },
+    "messages": [{ "serviceworker-notification": "/index.html" }]
 }
