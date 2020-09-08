@@ -10,7 +10,10 @@
     },
     "permissions": {
         "serviceworker": {},
-        "desktop-notification": {}
+        "desktop-notification": {},
+        "push": {
+            "description": "New update push."
+        }
     },
     "messages": [{ "serviceworker-notification": "/index.html" }]
 }
