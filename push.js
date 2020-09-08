@@ -69,6 +69,7 @@ function register() {
             });
             /*END*/
             console.debug("subscription: " + JSON.stringify(subscription));
+            document.getElementById("subscription").innerHTML = sub_details;
         })
         .catch((subscriptionErr) => {
             console.debug("subscriptionErr: " + subscriptionErr);
