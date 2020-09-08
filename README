@@ -5,7 +5,6 @@ How to verify
 3. RSK to register
 4. Check log whether includes push subscription (the following is an example)
 
-subscription: {"endpoint":"https://updates.rjio.kaiostech.com:8443/wpush/v1/gAAAAABYsAAZh7A0u3POOb9J_WiQE6m-yoJkXibjbvroRdnkW4lXhjR-Htr2mv3m0GLbBhwPOFkYW0LIlugzvlyw5j_uRwGJnx004zwgND5TSuRtLrCIn_NOmTACErKYCHSZyZ2UBUUv","keys":{"auth":"gdbFP0ODvj0U0DIe3Iiutw","p256dh":"BGxusm2FaOnZbSyxu3WkHd2cBc5zVRrQ-pA44Bkc4qeWJm3J51VK0e9xKPF9mQCzieIQCoy5S--zurjqdeCToVw"}} 
 
 
 
